@@ -1,4 +1,4 @@
-sudo su
+
 apt-get -y update
 apt-get -y install graphviz aspell ghostscript clamav git
 apt-get -yupdate
