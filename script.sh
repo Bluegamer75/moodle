@@ -1,3 +1,4 @@
+sudo su
 apt-get update
 apt-get install graphviz aspell ghostscript clamav git
 apt-get update
@@ -18,3 +19,5 @@ mkdir /var/www/moodledata
 chown www-data /var/www/moodledata -R
 chmod 0770 /var/www/moodledata -R
 mysql -u root -p
+apt install gnome 
+
