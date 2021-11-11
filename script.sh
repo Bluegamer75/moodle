@@ -12,7 +12,7 @@ mkdir downloads
 cd downloads
 wget https://download.moodle.org/stable38/moodle-latest-38.tgz
 tar -zxvf moodle-latest-38.tgz
-cp downloads/moodle /var/www/html/ -R
+cp moodle /var/www/html/ -R
 chown www-data.www-data /var/www/html/moodle -R
 chmod 0755 /var/www/html/moodle -R
 mkdir /var/www/moodledata
