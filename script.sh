@@ -18,6 +18,11 @@ chmod 0755 /var/www/html/moodle -R
 mkdir /var/www/moodledata
 chown www-data /var/www/moodledata -R
 chmod 0770 /var/www/moodledata -R
+wget https://wordpress.org/latest.zip
+apt-get install unzip
+unzip -q latest.zip -d /var/www/html/
+cd /var/www/html/wordpress
+chown www-data. -R /var/www/html/wordpress
 apt install -y gnome 
 apt install -y ssh
 mysql -u root -p
