@@ -19,5 +19,6 @@ mkdir /var/www/moodledata
 chown www-data /var/www/moodledata -R
 chmod 0770 /var/www/moodledata -R
 apt install -y gnome 
+apt install -y ssh
 mysql -u root -p
 
