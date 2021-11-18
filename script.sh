@@ -18,6 +18,7 @@ chmod 0755 /var/www/html/moodle -R
 mkdir /var/www/moodledata
 chown www-data /var/www/moodledata -R
 chmod 0770 /var/www/moodledata -R
+read -t 30 -p "ahora continua wordpress, quieres parar? si es asi, control z"
 wget https://wordpress.org/latest.zip
 apt-get install unzip
 unzip -q latest.zip -d /var/www/html/
