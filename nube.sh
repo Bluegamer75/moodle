@@ -1,16 +1,16 @@
-sudo apt update
-sudo apt upgrade
-sudo apt install apache2 -y
-sudo add-apt-repository
-sudo apt-get update -y
-sudo apt-get install owncloud -y
-sudo chown -R www-data:www-data /var/www/owncloud
-sudo apt-get install openssl -y
-sudo a2enmod ssl
-sudo a2enmod rewrite
-sudo mkdir -p /etc/apache2/ssl
-sudo openssl req -new -x509 -days 365 -nodes -out /etc/apache2/ssl/owncloud.pem -keyout /etc/apache2/ssl/owncloud.key
-sudo nano /etc/apache2/sites-enabled/owncloud.conf
-sudo service apache2 restart
-sudo apt install gnome -y 
-reboot
+apt update
+apt upgrade
+sudo chown www-data: www-data /var/www/html/ -R
+sudo systemctl start apache2
+sudo systemctl enable apache2	
+sudo apt install -y apache2 apache2-utils
+sudo apt-get install apache2 mariadb-server libapache2-mod-php7.0
+sudo apt-get install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
+sudo apt-get install php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+sudo snap install nextcloud
+a2enmod rewrite
+a2enmod headers
+a2enmod env
+a2enmod dir
+a2enmod mime
+service apache2 restart
