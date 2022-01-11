@@ -1,16 +1,20 @@
-apt update
-apt upgrade
-sudo chown www-data: www-data /var/www/html/ -R
-sudo systemctl start apache2
-sudo systemctl enable apache2	
-sudo apt install -y apache2 apache2-utils
-sudo apt-get install apache2 mariadb-server libapache2-mod-php7.0
-sudo apt-get install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
-sudo apt-get install php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
-sudo snap install nextcloud
-a2enmod rewrite
-a2enmod headers
-a2enmod env
-a2enmod dir
-a2enmod mime
-service apache2 restart
+sudo apt update
+sudo apt install apache2
+sudo apt install mysql-server
+sudo mysql_secure_installation
+sudo mysql -u root -p
+sudo apt install php7.4
+sudo apt install php7.4-gd php7.4-mysql php7.4-curl php7.4-mbstring
+sudo apt install php7.4-intl php7.4-gmp php7.4-bcmath php7.4-xml
+sudo apt install php7.4-zip php-imagick php-apcu
+wget https://download.nextcloud.com/server/releases/nextcloud-21.0.0.zip
+sudo apt install unzip
+sudo unzip nextcloud-21.0.0.zip -d /var/www
+cd /var/www
+sudo chown -R www-data:www-data nextcloud/
+sudo a2enmod headers env dir mime
+cd /etc/apache2/sites-available/
+sudo nano 000-default.conf
+sudo service apache2 restart
+sudo apt install i3-wm
+startx
